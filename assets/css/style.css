@@ -108,7 +108,34 @@ body {
     background-color: #20CF49;
     color: #FFFFFF;
 }
-
+.btn--primary {
+    background-color: #20CF49;
+    color: #FFFFFF;
+    padding: 13px 54px 13px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: none;
+    border-radius: 10px;
+    letter-spacing: 0;
+}
+.btn--demo {
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 13px 70px 13px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    margin-left: 10px;
+    transition: 0.3s ease;
+}
+.btn--demo:hover {
+    background-color: #20CF49;
+    color: #FFFFFF;
+}
 .hero {
     padding: 30px 0;
     background-color: #FFFFFF;
@@ -282,6 +309,7 @@ body {
 .aside-column {
     display: flex;
     flex-direction: column;
+    flex: 0 0 300px;
     gap: 20px;
     width: 100%;
     max-width: 320px;
@@ -351,6 +379,9 @@ body {
     gap: 40px;
     align-items: flex-start;
 }
+.main-column {
+    flex: 1;
+}
 .screenshots {
     flex: 1;
 }
@@ -412,7 +443,141 @@ body {
     background: none;
     border: none;
 }
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
 .aside-card strong {
     font-weight: 700;
 }
+.chicken-road-section {
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+}
+
+.chicken-road-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.chicken-road-text {
+    flex: 1 1 55%;
+}
+
+.chicken-road-text h2 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.chicken-road-text p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.chicken-road-text .btn {
+    padding: 13px 24px 13px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #20CF49;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.chicken-road-info-card {
+    width: 438px;
+    height: 518px;
+    flex: 1 1 40%;
+    background-color: #F0F1F2;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+}
+
+.chicken-road-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+}
+
+.chicken-road-info-card li {
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    line-height: 1.4;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    color: #1C1C1C;
+}
+
+.chicken-road-info-card li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.chicken-road-info-card li span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-right: 6px;
+    color: #1C1C1C;
+}
+.casino-banner {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.casino-banner img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+.casino-description {
+    font-weight: 800;
+    font-size: 23px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #1C1C1C;
+}
+.casino-description-paragraph {
+    color: #1C1C1C;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.banner-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column; /* ← вертикально */
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
