@@ -108,34 +108,95 @@ body {
     background-color: #20CF49;
     color: #FFFFFF;
 }
-.btn--primary {
+.btn--white {
     background-color: #20CF49;
     color: #FFFFFF;
-    padding: 13px 54px 13px 24px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 130%;
-    text-decoration: none;
+    padding: 13px 24px 13px 24px;
     border-radius: 10px;
-    letter-spacing: 0;
+    text-align: center;
+    transition: all 0.3s ease;
 }
-.btn--demo {
-    background-color: transparent;
+.btn--white:hover {
+    background-color: #20CF49;
     color: #FFFFFF;
-    padding: 13px 70px 13px 24px;
-    font-weight: 700;
+}
+.btn--link {
+    display: contents;
+    cursor: pointer;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 130%;
-    text-decoration: none;
-    border-radius: 10px;
+    line-height: 100%;
+    color: #1C1C1C;
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
+/* Иконки
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+ */
+.banner-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+/* кнопка 'PLAY FOR REAL' // возможно пригодится если нужно будет добавить дополнительные стили \\
+.btn--primary {}
+ */
+.btn--demo {
+    width: 204px;
+    height: 47px;
+    text-align: center;
+    background-color: transparent;
     border: 2px solid #FFFFFF;
-    margin-left: 10px;
     transition: 0.3s ease;
 }
 .btn--demo:hover {
     background-color: #20CF49;
     color: #FFFFFF;
 }
+.btn--link,
+.btn--review {
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #20CF49;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.btn--play {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.btn--link .btn--review {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.btn.btn--brand {
+    padding: 13px 54px 13px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
 .hero {
     padding: 30px 0;
     background-color: #FFFFFF;
@@ -321,7 +382,7 @@ body {
     margin: 0;
 }
 .toc {
-   /* position: sticky; */
+   /* position: sticky; Чтобы элемент стоял на месте */
     width: 282px;
     height: 354px;
     background-color: #F0F1F2;
@@ -418,37 +479,6 @@ body {
     gap: 10px;
     width: 100%;
 }
-.btn--white {
-    background-color: #20CF49;
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 13px 24px 13px 24px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.btn--white:hover {
-    background-color: #20CF49;
-    color: #FFFFFF;
-}
-.btn--link {
-    display: contents;
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    color: #1C1C1C;
-    text-decoration: underline;
-    background: none;
-    border: none;
-}
-.btn-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
 .aside-card strong {
     font-weight: 700;
 }
@@ -484,15 +514,8 @@ body {
 
 .chicken-road-text .btn {
     padding: 13px 24px 13px 24px;
-    font-size: 16px;
-    border-radius: 10px;
-    background-color: #20CF49;
-    color: #fff;
-    text-decoration: none;
     display: inline-block;
-    font-weight: 700;
 }
-
 .chicken-road-info-card {
     width: 438px;
     height: 518px;
@@ -554,10 +577,15 @@ body {
 }
 .casino-description {
     font-weight: 800;
-    font-size: 23px;
+    font-size: 22px;
     line-height: 1.1;
-    margin-bottom: 20px;
     color: #1C1C1C;
+}
+.casino-description-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
 }
 .casino-description-paragraph {
     color: #1C1C1C;
@@ -565,19 +593,140 @@ body {
     font-size: 16px;
     line-height: 1.4;
 }
-
-.banner-buttons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.casino-list {
     display: flex;
-    flex-direction: column; /* ← вертикально */
+    flex-direction: column;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
+    margin-top: 20px;
 }
 
+.casino-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #F0F1F2;
+}
 
+.casino-rank-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #20CF49;
+    gap: 10px;
+    padding: 4px;
+    border-radius: 50%;
+    line-height: 1.4;
+}
+.casino-logo {
+    width: 180px;
+    height: 77px;
+}
+.casino-gift-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+.casino-text {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 30px;
+    flex: 1;
+}
 
+.casino-bonus-title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #1C1C1C;
+    margin-bottom: 4px;
+}
 
+.casino-bonus-sub {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1C1C1C;
+}
+
+.casino-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: auto;
+}
+.casino-brand-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.casino-brand-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+.casino-brand-title {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #1C1C1C;
+}
+
+.casino-brand-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1C1C1C;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.casino-info-table {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.casino-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F0F1F2;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.casino-info-label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #1C1C1C;
+}
+
+.casino-info-value {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #333333;
+    text-align: right;
+    flex: 1;
+}
