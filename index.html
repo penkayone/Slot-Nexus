@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
-            rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/reset.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <title>Document</title>
 </head>
@@ -23,12 +21,12 @@
 
             <nav class="navigation">
                 <ul class="header_navigation__list">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Demo</a></li>
-                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">DEMO</a></li>
+                    <li><a href="#">REVIEWS</a></li>
                     <li class="header__dropdown">
                         <a href="#">
-                            Bookmachers
+                            BOOKMACHERS
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon--small dropdown__arrow"
@@ -63,8 +61,10 @@
             <div class="hero__image">
                 <img src="assets/img/hero-image.png" alt="Игровой автомат"/>
             </div>
-            <div class="hero__content">
-                <h1>CHICKEN ROAD GAME - PLAY FOR FREE</h1>
+            <div class="hero__header">
+                <h1 class="section-title">CHICKEN ROAD GAME - PLAY FOR FREE</h1>
+            </div>
+            <div class="hero__descr">
                 <p>
                     The Chicken Road game by InOut Games is a fun turn-on crash or mine
                     game. You decide whether it is already time to cash out. With an
@@ -89,37 +89,42 @@
                         />
                     </svg>
                 </div>
-
-                <div class="hero__features">
-                    <div class="feature">
-                        <img src="assets/img/feature-icon-1.svg" alt="icon"/>
-                        <div class="feature__text">
-                            <p class="feature__title">Software provider</p>
-                            <p class="feature__value">InOut Games</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img src="assets/img/feature-icon-2.svg" alt="icon"/>
-                        <div class="feature__text">
-                            <p class="feature__title">Game Type</p>
-                            <p class="feature__value">Crash game</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img src="assets/img/feature-icon-3.svg" alt="icon"/>
-                        <div class="feature__text">
-                            <p class="feature__title">RTP</p>
-                            <p class="feature__value">98%</p>
-                        </div>
+            </div>
+            <div class="hero__features">
+                <div class="feature">
+                    <img src="assets/img/feature-icon-1.svg" alt="icon"/>
+                    <div class="feature__text">
+                        <p class="feature__title">Software provider</p>
+                        <p class="feature__value">InOut Games</p>
                     </div>
                 </div>
-
-                <a href="#" class="btn">Let's play</a>
-                <a href="#" class="btn btn--secondary">Download game</a>
+                <div class="feature">
+                    <img src="assets/img/feature-icon-2.svg" alt="icon"/>
+                    <div class="feature__text">
+                        <p class="feature__title">Game Type</p>
+                        <p class="feature__value">Crash game</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="assets/img/feature-icon-3.svg" alt="icon"/>
+                    <div class="feature__text">
+                        <p class="feature__title">RTP</p>
+                        <p class="feature__value">98%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__buttons">
+                <a href="#" class="btn">
+                    <img src="assets/icons/play-icon.svg" alt="play icon" class="btn-icon"> LET'S PLAY
+                </a>
+                <a href="#" class="btn btn--secondary">
+                    <img src="assets/icons/download-icon.svg" alt="download icon" class="btn-icon"> DOWNLOAD GAME
+                </a>
             </div>
         </div>
     </div>
 </section>
+
 
 <div class="content-wrapper">
     <main>
@@ -623,8 +628,14 @@
     </main>
     <aside class="aside-column">
         <div class="toc">
-            <h3>TABLE OF CONTENT</h3>
-            <ul>
+            <h3>TABLE OF CONTENT<span class="toc-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9l6 6 6-6" stroke="#000" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span></h3>
+            <ul class="toc-list">
                 <li><a href="#section1">Chicken Road Game — Key Features</a></li>
                 <li><a href="#section2">How to Win at Chicken Road?</a></li>
                 <li><a href="#section3">How to Register the Casino? </a></li>

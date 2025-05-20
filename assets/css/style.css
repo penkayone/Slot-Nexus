@@ -1,6 +1,16 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
+:root {
+    --color-primary: #20CF49;
+    --color-secondary: #F0F1F2;
+    --color-text: #1C1C1C;
+    --padding-base: 16px;
+    --border-radius: 10px;
+    --z-index-dropdown: 100;
+    --z-index-fixed-header: 200;
+    --z-index-modal: 500;
+}
 body {
     margin: 0;
     font-family: 'Onest', sans-serif;
@@ -10,7 +20,6 @@ body {
     margin: 0 auto;
     padding: 10px;
 }
-
 
 .header {
     background-color: #FFFFFF;
@@ -38,7 +47,6 @@ body {
 }
 .header__dropdown a {
     display: flex;
-    align-items: center;
     gap: 4px;
 }
 .header__dropdown:hover .dropdown__menu {
@@ -70,6 +78,24 @@ body {
 .dropdown__menu li a:hover {
     color: #20CF49;
 }
+@media (max-width: 991px) {
+    .header .navigation {
+        display: none;
+        position: absolute;
+        top: 90px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 35px;
+        background-color: #fff;
+    }
+    .header_navigation__list {
+        flex-direction: column;
+    }
+    .header .header__inner .btn {
+        display: none;
+    }
+}
 
 .content-wrapper {
     display: flex;
@@ -78,6 +104,11 @@ body {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
+}
+@media (max-width: 991px) {
+    .content-wrapper {
+        display: none;
+    }
 }
 
 .btn {
@@ -88,7 +119,7 @@ body {
     font-size: 16px;
     line-height: 130%;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     letter-spacing: 0;
 }
 .btn--secondary {
@@ -100,13 +131,18 @@ body {
     line-height: 130%;
     text-decoration: none;
     border-radius: 10px;
-    border: 2px solid #20CF49;
-    margin-left: 10px;
+    border: 2px solid var(--color-primary);
     transition: 0.3s ease;
 }
 .btn--secondary:hover {
     background-color: #20CF49;
     color: #FFFFFF;
+}
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 .btn--white {
     background-color: #20CF49;
@@ -187,9 +223,7 @@ body {
 }
 .btn--link,
 .btn--review {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #333333;
+    color: #1C1C1C;
 }
 .btn.btn--brand {
     padding: 13px 54px 13px 24px;
@@ -203,10 +237,31 @@ body {
     background-color: #FFFFFF;
 }
 .hero__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas:
+        "image header"
+        "image descr"
+        "image features"
+        "image buttons";
     gap: 30px;
+}
+.hero__image {
+    grid-area: image;
+}
+.hero__header {
+    grid-area: header;
+}
+.hero__header .section-title {
+    margin-bottom: 0;
+}
+.hero__descr {
+    grid-area: descr;
+}
+.hero__features {
+    grid-area: features;
+}
+.hero__buttons {
+    grid-area: buttons;
 }
 .hero__content {
     max-width: 938px;
@@ -220,9 +275,7 @@ body {
 }
 .hero__content p {
     font-size: 16px;
-    font-weight: 400;
     line-height: 140%;
-    margin-bottom: 20px;
     color: #1C1C1C;
 }
 .hero__image img {
@@ -233,9 +286,36 @@ body {
 .hero__features {
     display: flex;
     gap: 20px;
-    padding-top: 52px;
-    margin-bottom: 30px;
     flex-wrap: wrap;
+}
+.hero__buttons {
+    display: flex;
+    gap: 10px;
+}
+@media (max-width: 991px) {
+    .hero__inner {
+        grid-template-areas:
+        "header"
+        "image"
+        "features"
+        "descr"
+        "buttons";
+        gap: 20px;
+    }
+    .hero__features {
+        padding-top: 0;
+        margin-bottom: 0;
+        gap: 4px;
+    }
+    .hero__buttons {
+        flex-direction: column;
+    }
+    .hero__image {
+        width: 343px;
+        height: auto;
+        grid-area: image;
+        text-align: center;
+    }
 }
 
 .read-more {
@@ -347,33 +427,7 @@ body {
 .section-title {
     font-size: 28px;
     font-weight: 800;
-    line-height: 111%;
     margin-bottom: 20px;
-}
-.section-title {
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: 0;
-    margin-bottom: 20px;
-    color: #1C1C1C;
-}
-.section-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #1C1C1C;
-}
-.section-text {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #1C1C1C;
-    margin-bottom: 20px;
-}
-.section-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 60px 0 20px 0;
     color: #1C1C1C;
 }
 .section-text {
@@ -433,9 +487,6 @@ body {
 .slider-btn--next {
     right: 0;
 }
-.slider-btn:hover {
-    background-color: #e3e3e3;
-}
 .slider__dots {
     display: flex;
     position: absolute;
@@ -494,25 +545,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
     font-size: 20px;
     font-weight: 700;
     line-height: 130%;
     margin-bottom: 20px;
     color: #06060F;
 }
-.toc h3::after {
-    content: '︿';
+.toc-arrow svg {
+    display: inline-block;
     width: 36px;
     height: 36px;
-    background: white;
+    background-color: #FFFFFF;
     border-radius: 50%;
+    cursor: pointer;
     padding: 6px 6px 6px 6px;
-    font-size: 14px;
-    border: 1px solid #ccc;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.toc.open .toc-arrow svg {
+    transform: rotate(180deg);
+}
+.toc-list {
+    transition: all 0.3s ease;
+    max-height: 300px;
+    overflow: hidden;
+}
+.toc.closed .toc-list {
+    max-height: 0;
 }
 .toc ul {
-    width: 250px;
-    height: 44px;
     font-size: 16px;
     line-height: 140%;
     list-style-type: none;
@@ -577,7 +639,6 @@ body {
 
 .chicken-road-section {
     padding: 60px 0;
-    border-top: 1px solid #eee;
 }
 .chicken-road-grid {
     display: flex;
@@ -605,8 +666,6 @@ body {
     display: inline-block;
 }
 .chicken-road-info-card {
-    width: 438px;
-    height: 518px;
     flex: 1 1 40%;
     background-color: #F0F1F2;
     border-radius: 20px;
@@ -937,9 +996,8 @@ body {
 }
 .advantages-disadvantages-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 900px;
 }
 .advantages, .disadvantages {
     display: flex;
@@ -1116,3 +1174,9 @@ body {
     max-height: 30px;
     width: auto;
 }
+@media (max-width: 991px) {
+    .footer {
+        display: none;
+    }
+}
+
