@@ -58,30 +58,18 @@ window.addEventListener('load', () => {
     goToSlide(0);
 });
 
-document.querySelector('.toc h3').addEventListener('click', () => {
-    document.querySelector('.toc').classList.toggle('open');
-    document.querySelector('.toc').classList.toggle('closed');
-});
-
-// Burger / Mobile nav toggle
+// js/index.js
 const burgerBtn = document.getElementById('burgerBtn');
 const mobileNav = document.getElementById('mobileNav');
 const closeNavBtn = document.getElementById('closeNavBtn');
-const mobileOverlay = document.querySelector('.mobile-nav__overlay');
+const dropdownBtn = document.getElementById('dropdownBtn');
+const dropdownList = document.getElementById('dropdownList');
+const dropdownArrow = document.getElementById('dropdownArrow');
 
-function openMobileMenu() {
-    mobileNav.classList.add('open');
-    document.body.classList.add('mobile-menu-open');
-}
-function closeMobileMenu() {
-    mobileNav.classList.remove('open');
-    document.body.classList.remove('mobile-menu-open');
-}
-if (burgerBtn && mobileNav && closeNavBtn) {
-    burgerBtn.onclick = openMobileMenu;
-    closeNavBtn.onclick = closeMobileMenu;
-}
-if (mobileOverlay) {
-    mobileOverlay.onclick = closeMobileMenu;
-}
+burgerBtn.onclick = () => mobileNav.classList.add('open');
+closeNavBtn.onclick = () => mobileNav.classList.remove('open');
 
+dropdownBtn.onclick = function() {
+    dropdownList.classList.toggle('open');
+    dropdownBtn.classList.toggle('open');
+};
