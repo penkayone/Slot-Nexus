@@ -48,36 +48,31 @@
         </div>
     </div>
 
-    <!-- Мобильное меню -->
+    <!-- Мобильное меню (offcanvas) -->
     <nav class="mobile-nav" id="mobileNav">
         <div class="mobile-nav__content">
             <div class="mobile-nav__header">
                 <img src="assets/img/logo.png" class="logo" alt="логотип" />
-                <button class="close-nav" id="closeNavBtn" aria-label="Close menu">
-                    <svg width="32" height="32" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#F0F1F2"/>
-                        <path d="M15 9L9 15" stroke="#232323" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M9 9L15 15" stroke="#232323" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                <button class="close-nav" id="closeNavBtn" aria-label="Close menu">&times;</button>
             </div>
             <ul>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">DEMO</a></li>
                 <li><a href="#">REVIEWS</a></li>
-                <li class="dropdown">
-                    <button class="dropdown-btn" id="dropdownBtn">
+                <li>
+                    <button class="dropdown-toggle" id="casinosDropdownBtn" aria-expanded="false">
                         CASINOS
-                        <svg id="dropdownArrow" width="20" height="20" viewBox="0 0 24 24">
+                        <svg id="casinosArrow" width="22" height="22" viewBox="0 0 24 24" fill="none" style="margin-left: 6px; vertical-align: middle; transition: transform 0.3s;">
                             <path d="M6 9l6 6 6-6" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <ul class="dropdown-list" id="dropdownList">
+                    <ul class="dropdown-menu" id="casinosDropdownMenu">
                         <li><a href="#">1WIN</a></li>
                         <li><a href="#">PIN UP</a></li>
                         <li><a href="#">MOSTBET</a></li>
                     </ul>
                 </li>
+                <li><a href="#">REVIEWS</a></li>
             </ul>
         </div>
     </nav>

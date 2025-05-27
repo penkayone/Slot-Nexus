@@ -58,18 +58,39 @@ window.addEventListener('load', () => {
     goToSlide(0);
 });
 
-// js/index.js
+// Burger open/close
 const burgerBtn = document.getElementById('burgerBtn');
 const mobileNav = document.getElementById('mobileNav');
 const closeNavBtn = document.getElementById('closeNavBtn');
-const dropdownBtn = document.getElementById('dropdownBtn');
-const dropdownList = document.getElementById('dropdownList');
-const dropdownArrow = document.getElementById('dropdownArrow');
 
-burgerBtn.onclick = () => mobileNav.classList.add('open');
-closeNavBtn.onclick = () => mobileNav.classList.remove('open');
+burgerBtn.addEventListener('click', () => {
+    mobileNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+});
 
-dropdownBtn.onclick = function() {
-    dropdownList.classList.toggle('open');
-    dropdownBtn.classList.toggle('open');
-};
+closeNavBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+});
+
+// CASINOS dropdown logic
+const casinosDropdownBtn = document.getElementById('casinosDropdownBtn');
+const casinosDropdownMenu = document.getElementById('casinosDropdownMenu');
+const casinosArrow = document.getElementById('casinosArrow');
+
+casinosDropdownBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const isOpen = casinosDropdownMenu.classList.toggle('open');
+    casinosDropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    casinosArrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+    // При повторном нажатии – скрываем, и наоборот
+});
+
+// Клик по элементам dropdown – скрываем dropdown
+casinosDropdownMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        casinosDropdownMenu.classList.remove('open');
+        casinosDropdownBtn.setAttribute('aria-expanded', 'false');
+        casinosArrow.style.transform = 'rotate(0deg)';
+    });
+});
