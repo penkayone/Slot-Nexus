@@ -1492,3 +1492,184 @@ body {
         text-align: left;
     }
 }
+@media (max-width: 991px) {
+    .aside-column {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 0 auto;
+        padding: 0;
+        display: block;
+    }
+    .main-content-with-aside {
+        flex-direction: column;
+    }
+}
+
+/* А чтобы aside-блок был сразу после .best-casinos-section */
+@media (max-width: 991px) {
+    .main-content-with-aside > .aside-column {
+        margin-top: 24px;
+    }
+    /* Спрятать aside на десктопе, если надо */
+    @media (min-width: 992px) {
+        .main-content-with-aside > .aside-column {
+            margin-top: 0;
+        }
+    }
+}
+
+/* Для мобильного вида красиво оформить карточки */
+@media (max-width: 575px) {
+    .aside-column {
+        order: 3;
+        margin-top: 32px;
+        padding: 0 0 16px 0;
+        background: none;
+        box-shadow: none;
+    }
+    .aside-card {
+        width: 100%;
+        max-width: 343px;
+        margin: 0 auto 16px auto;
+        height: auto;
+        padding: 20px 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .aside-card__title {
+        text-align: left;
+        font-size: 18px;
+        margin: 0 0 14px 8px;
+        font-weight: 700;
+    }
+    .aside-card img {
+        width: 100%;
+        height: 38px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .aside-card p {
+        font-size: 14px;
+        line-height: 1.4;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .aside-card__buttons {
+        gap: 8px;
+        width: 100%;
+    }
+    .btn.btn--white,
+    .btn.btn--link {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 12px 0;
+        margin: 0;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* При необходимости, чтобы aside был ПОД .best-casinos-section, можно добавить такой трюк: */
+/* Мобильный стиль для .casino-list */
+@media (max-width: 575px) {
+    .casino-list {
+        gap: 16px;
+        margin-top: 16px;
+    }
+    .casino-item {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 10px;
+        gap: 12px;
+        border-radius: 16px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    .casino-rank-icon {
+        align-self: center;
+        margin-bottom: 4px;
+    }
+    .casino-logo {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        align-self: center;
+        margin: 0 auto 8px auto;
+        display: block;
+    }
+    .casino-text {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+    .casino-bonus-title {
+        font-size: 13px;
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .casino-bonus-sub {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 4px;
+        text-align: center;
+        width: 100%;
+    }
+    .casino-buttons {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        align-items: stretch;
+        margin: 0;
+        justify-content: flex-start;
+    }
+    .casino-buttons .btn--play,
+    .casino-buttons .btn--review {
+        width: 100%;
+        min-width: 0;
+        font-size: 14px;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 8px;
+        margin: 0;
+        white-space: nowrap;
+    }
+    /* Стили для кнопки Read Review (убрать border, цвет серый, подчеркивание, как на макете) */
+    .casino-buttons .btn--review {
+        background: none !important;
+        border: none !important;
+        color: #1C1C1C !important;
+        text-decoration: underline !important;
+        font-weight: 500 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Исправляем стиль для aside (сохраняем border и цвет для aside) */
+@media (max-width: 575px) {
+    .aside-card__buttons .btn--link {
+        background-color: transparent;
+        border: 2px solid #20CF49;
+        color: #1C1C1C;
+        padding: 10px 0;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        box-shadow: none;
+        margin: 0;
+        display: block;
+    }
+}
