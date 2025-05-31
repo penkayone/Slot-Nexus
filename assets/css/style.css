@@ -1673,3 +1673,130 @@ body {
         display: block;
     }
 }
+/* === KEY FEATURES: МОБИЛЬНЫЙ СТИЛЬ === */
+.key-features-section {
+    padding: 24px 0 24px 0;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    margin-top: 32px;
+    max-width: 343px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.key-features-section .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.1;
+    color: #1C1C1C;
+    text-align: left;
+    margin-bottom: 14px;
+    padding-right: 36px;
+    position: relative;
+    word-break: break-word;
+    max-width: 85%;
+}
+.key-features-section .section-title:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #20CF49;
+    border-radius: 4px;
+    display: block;
+}
+
+.key-features-description {
+    font-size: 15px;
+    color: #1C1C1C;
+    margin-bottom: 22px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #F0F1F2;
+    border-radius: 14px;
+    padding: 16px 13px;
+    box-shadow: none;
+    transition: none;
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.feature-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    color: #1C1C1C;
+}
+.feature-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: #1C1C1C;
+    line-height: 1.4;
+}
+@media (max-width: 575px) {
+    .key-features-section {
+        padding: 20px 0 20px 0;
+        max-width: 343px;
+        margin: 28px auto 0 auto;
+    }
+    .key-features-section .section-title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    .key-features-section .section-title:after {
+        display: none;
+    }
+    .features-grid {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .feature-item {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 13px 10px;
+        border-radius: 12px;
+        min-height: 60px;
+    }
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+        margin-top: 3px;
+    }
+    .feature-title {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+    .feature-subtitle {
+        font-size: 12px;
+    }
+}
