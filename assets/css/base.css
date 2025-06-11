@@ -1,0 +1,22 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --color-primary: #20CF49;
+    --color-secondary: #F0F1F2;
+    --color-text: #1C1C1C;
+    --padding-base: 16px;
+    --border-radius: 10px;
+    --z-index-dropdown: 100;
+    --z-index-fixed-header: 200;
+    --z-index-modal: 500;
+}
+body {
+    margin: 0;
+    font-family: 'Onest', sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}

@@ -1,0 +1,58 @@
+.hero {
+    padding: 30px 0;
+    background-color: #FFFFFF;
+}
+.hero__inner {
+    display: grid;
+    grid-template-areas:
+        "image header"
+        "image descr"
+        "image features"
+        "image buttons";
+    gap: 30px;
+}
+.hero__image {
+    grid-area: image;
+}
+.hero__header {
+    grid-area: header;
+}
+.hero__header .section-title {
+    margin-bottom: 0;
+}
+.hero__descr {
+    grid-area: descr;
+}
+.hero__features {
+    grid-area: features;
+}
+.hero__content {
+    max-width: 938px;
+}
+.hero__content h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 110%;
+    color: #06060F;
+}
+.hero__content p {
+    font-size: 16px;
+    line-height: 140%;
+    color: #1C1C1C;
+}
+.hero__image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+}
+.hero__features {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.hero__buttons {
+    display: flex;
+    gap: 10px;
+    grid-area: buttons;
+}

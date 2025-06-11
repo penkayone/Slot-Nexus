@@ -1,0 +1,106 @@
+.btn {
+    background-color: #20CF49;
+    color: #FFFFFF;
+    padding: 13px 54px 13px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    letter-spacing: 0;
+}
+.btn--secondary {
+    background-color: transparent;
+    color: #20CF49;
+    padding: 11px 54px 11px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid var(--color-primary);
+    transition: 0.3s ease;
+}
+.btn--secondary:hover {
+    background-color: #20CF49;
+    color: #FFFFFF;
+}
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.btn--white {
+    background-color: #20CF49;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 13px 24px 13px 24px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.btn--white:hover {
+    background-color: #20CF49;
+    color: #FFFFFF;
+}
+.btn--link {
+    display: contents;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #1C1C1C;
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
+.banner-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.btn--demo {
+    width: 204px;
+    height: 47px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    transition: 0.3s ease;
+}
+.btn--demo:hover {
+    background-color: #20CF49;
+    color: #FFFFFF;
+}
+.btn--link,
+.btn--review {
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #20CF49;
+    text-align: center;
+    font-weight: 600;
+    color: #1C1C1C;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.btn--play {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.btn.btn--brand {
+    padding: 13px 54px 13px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
